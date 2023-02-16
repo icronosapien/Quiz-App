@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import './questions.dart';
 import './main.dart';
@@ -23,7 +21,9 @@ class Quiz extends StatelessWidget {
         Question(questions[questionIndex]['questionText'] as String),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
-          return Answers(selectHandler: () => answerQuestion(answer['score']), answerText: answer['text'] as String);
+          return Answers(
+              selectHandler: () => answerQuestion(answer['score']),
+              answerText: answer['text'] as String);
         }).toList(),
         //Answers(selectHandler: _answerQuestion,),
         //Answers(selectHandler: _answerQuestion),
